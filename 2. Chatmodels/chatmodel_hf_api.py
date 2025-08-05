@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 llm = HuggingFaceEndpoint(    
-    repo_id="mistralai/Mistral-7B-Instruct-v0.2",
+    repo_id="tiiuae/falcon-7b-instruct",
     task="text-generation"
 )
 
