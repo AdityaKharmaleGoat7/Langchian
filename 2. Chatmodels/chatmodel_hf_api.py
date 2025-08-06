@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 llm = HuggingFaceEndpoint(    
-    repo_id="tiiuae/falcon-7b-instruct",
+    repo_id="mistralai/Mistral-7B-Instruct-v0.2",
     task="text-generation"
 )
 
 model = ChatHuggingFace(llm=llm)
 
-result = model.invoke("What is the capital of India", temperature=2)
+result = model.invoke("What is the capital of India")
 
 print(result.content)
