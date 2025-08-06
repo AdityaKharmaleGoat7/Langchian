@@ -38,11 +38,18 @@ prompt3 = PromptTemplate(
 )
 
 
-
-
 branch_chain = RunnableBranch(
     (lambda x: x.sentiment == "positive", prompt2 | model | parser),
     (lambda x: x.sentiment == "negative", prompt3 | model | parser),
     RunnableLambda(lambda x: "No response needed for feedback")
 )
- 
+
+chain = classifier_chain | branch_chain
+
+result = chain.invoke({
+    "feedback": "I love the new features in this app!" 
+})
+
+print(result)
+
+chain.get_graph().print_ascii()   
