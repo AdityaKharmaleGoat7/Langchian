@@ -31,5 +31,4 @@ while True:
     messages.append({"role": "assistant", "content": response})
     print(f"Assistant: {response}")
 
-# print(messages)
 
