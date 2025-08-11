@@ -8,7 +8,7 @@
 
 from langchain.schema.runnable import RunnableSequence, RunnableLambda
 
-def word_counter(text: str) -> int:
+def word_counter(text):
     """Count the number of words in a given text."""
     return len(text.split())
 
