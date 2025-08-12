@@ -21,6 +21,6 @@ docs = loader.load()
 print(docs[0].page_content)
 print(docs[0].metadata)
 
-chain = model | prompt | pareser
+chain = prompt | model | pareser
 
 print(chain.invoke({"text": docs[0].page_content}))
